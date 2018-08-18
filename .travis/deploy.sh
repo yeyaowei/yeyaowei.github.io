@@ -14,4 +14,4 @@ git add .
 git commit -m "Site updated: `date +"%Y-%m-%d %H:%M:%S"`"
 
 # 推送
-git push origin master:master --force --quiet
+git push "https://${Travis}@github.com/yeyaowei/yeyaowei.github.io.git" master:master --force --quiet
