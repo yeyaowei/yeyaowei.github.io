@@ -10,13 +10,7 @@ after_script:
     - git config user.email "yeyaowei@rhw-team.com" # 修改email
     - npm install -g hexo-cli
 after_success:
-    - git clone -b master git@github.com:yeyaowei/yeyaowei.github.io.git .deploy_git
-    - cd .deploy_git
-    - git checkout master
-    - mv .git/ ../public/
-    - cd ../public
-    - git add .
-    - git commit -m "Site updated: `date +"%Y-%m-%d %H:%M:%S"`"
+    - .travis/deploy.sh
 branches:
     only:
         - source
