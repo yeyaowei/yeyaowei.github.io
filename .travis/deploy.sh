@@ -12,3 +12,6 @@ cd ../public
 
 git add .
 git commit -m "Site updated: `date +"%Y-%m-%d %H:%M:%S"`"
+
+# 推送
+git push origin master:master --force --quiet

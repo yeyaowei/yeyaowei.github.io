@@ -1,14 +1,21 @@
 language: node_js # 设置语言
 node_js: stable # 设置相应版本
+
 install:
-    - npm install # 安装hexo及插件
+    - npm install # 安装 Hexo 以及依赖
+
+# 缓存依赖，节省构建时间
+cache:
+    directories:
+        - node_modules
+
 script:
-    - hexo clean # 清除
-    - hexo g # 生成
-after_script:
-    - git config user.name "yeyaowei" # 修改name
-    - git config user.email "yeyaowei@rhw-team.com" # 修改email
-    - npm install -g hexo-cli
+    - node_modules/.bin/hexo clean # 清除
+    - node_modules/.bin/hexo g # 生成
+before_install:
+    - git config user.name "yeyaowei"
+    - git config user.email "yeyaowei@rhw-team.com"
+    - chmod +x .travis/deploy.sh
 after_success:
     - .travis/deploy.sh
 branches:
