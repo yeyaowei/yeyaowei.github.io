@@ -13,8 +13,7 @@ script:
     - node_modules/.bin/hexo clean # 清除
     - node_modules/.bin/hexo g # 生成
 before_install:
-    - openssl aes-256-cbc -K $encrypted_d96694aca24a_key -iv $encrypted_d96694aca24a_iv
-  -in .traivs/travis.key.enc -out ~/.ssh/id_rsa -d
+    - openssl aes-256-cbc -K $encrypted_d96694aca24a_key -iv $encrypted_d96694aca24a_iv -in .traivs/travis.key.enc -out ~/.ssh/id_rsa -d
     - chmod 600 ~/.ssh/id_rsa
     - git config user.name "yeyaowei"
     - git config user.email "yeyaowei@rhw-team.com"
