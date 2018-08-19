@@ -5,7 +5,7 @@ tags:
 ---
 这次上线了一个非常简陋的留言系统...
 ## 界面作用
-![主界面](leave-message-system/main.png)
+{% asset_img main.png 主界面 %}
 
 没错！他的作用就是给我留言啦，对于现实生活中的朋友来说，你可以用它来向我提供一些建议，或者是我有什么不好的地方你可以告诉我让我来改正。而对于网络上的朋友们也可以用它来向我表白哦（嘻嘻嘻
 
@@ -13,19 +13,19 @@ tags:
 
 提交之后系统会为你生成一个「回执编号」，用它来查询我给你的回复。是的这东西我还可以回复！
 
-![提交](leave-message-system/success.png)
+{% asset_img success.png 提交 %}
 
 正常情况下只要你不换浏览器不清除 Cookie 的话，重新刷新网页就可以看到你的留言是否被我回复。就像这样↓
-![无回复](leave-message-system/reply-no.png)
+{% asset_img reply-no.png 无回复 %}
 
 ## 回复之后
 是的就会显示我对你的回复了，简单明了hhh
-![已回复](leave-message-system/replied.png)
+{% asset_img replied.png 已回复 %}
 
 ## 手动查询
 当然你也可以选择手动查询「回执编号」，有可能有些痴汉一直发留言给我呢（笑
 
-![手动查询](leave-message-system/query.png)
+{% asset_img query.png 手动查询 %}
 
 ## 简单原理
 前端是随便用 Bootstrap 写的一个界面，后端用 Node.js + Koa2 写的，网页发送留言请求后，后端那边就会产生一个随机数作为「回执编号」，并且将编号及留言以 JSON 的形式保存在硬盘上。查询回复的话则是再读取 JSON 的数据了，那么我回复的话要怎么办呢？呵呵，用文本编辑器打开 JSON 文件手动打上去... 因为还没写好回复的界面hhh
