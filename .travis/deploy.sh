@@ -15,4 +15,4 @@ git commit -m "Site updated: `date +"%Y-%m-%d %H:%M:%S"`"
 
 # 推送
 git push "git@github.com:yeyaowei/yeyaowei.github.io.git" master:master --force --quiet
-git push "git@hexo.yeyaowei.xyz:hexo.git" master:master --force --quiet
+git push "git@yeyaowei.xyz:hexo.git" master:master --force --quiet
