@@ -11,7 +11,7 @@ tags:
 在音频设置里面的确有看到 `GK106 HDMI Audio Controller` ，但是却没有 HDMI 输出配置。然后折腾来折腾去各种卸载安装无济于事。
 于是我就在想是不是驱动的问题？然后我就把驱动换成了更老的 390 版本，果然！换到老版本之后就出现了 `Digital Stereo (HDMI 3) 输出` 的选项！
 但是我想用最新的版本也... 平常安装显卡驱动都是系统自带的一些安装工具，那么如何自己上 NVIDIA 网站下载驱动并且安装呢？
-
+<!--more-->
 ## 安装方法
 ### 下载驱动
 首先上 [NVIDIA](https://www.nvidia.cn/Download/index.aspx?lang=cn) 官网下载自己的显卡驱动，操作系统选择 `Linux 64-bit`。
