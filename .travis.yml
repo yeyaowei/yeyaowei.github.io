@@ -2,7 +2,7 @@ language: node_js # 设置语言
 node_js: stable # 设置相应版本
 
 install:
-    - npm install # 安装 Hexo 以及依赖
+    - yarn # 安装 Hexo 以及依赖
 
 # 缓存依赖，节省构建时间
 cache:
