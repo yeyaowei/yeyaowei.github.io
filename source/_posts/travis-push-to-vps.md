@@ -1,6 +1,7 @@
 ---
 title: VPS 也启用部署系统了
 date: 2018-08-19 17:44:40
+updated: 2018-08-19 17:44:40
 tags:
 ---
 现在博客更新将会都同步到 [GitHub Pages](https://yeyaowei.github.io/) 与 [hexo.yeyaowei.xyz](http://hexo.yeyaowei.xyz/)
