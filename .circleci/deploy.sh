@@ -9,6 +9,7 @@ git clone -b master "git@github.com:yeyaowei/yeyaowei.github.io.git" .deploy_git
 cd .deploy_git
 git checkout master
 mv .git/ ../public/
+cp ../.circleci/config.yml ../public/
 cd ../public
 git add .
 git commit -m "更新: `date +"%Y-%m-%d %H:%M:%S"`"

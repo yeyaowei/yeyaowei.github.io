@@ -38,3 +38,11 @@ jobs:
       - run:
           name: Run Deploy Script
           command: bash .circleci/deploy.sh
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: source
