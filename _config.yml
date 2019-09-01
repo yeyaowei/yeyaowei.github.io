@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: "Alvin's Blog"
+title: "Wolf_G's Blog"
 subtitle: 一个还没建成的小破站
 description:
 keywords:
-author: Alvin Ye
+author: Wolf G
 language: zh-CN
 timezone:
 
@@ -73,7 +73,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
