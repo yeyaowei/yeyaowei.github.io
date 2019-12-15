@@ -3,7 +3,7 @@ set -ev
 export TZ='Asia/Shanghai'
 
 git config --global user.name "yeyaowei"
-git config --global user.email "yeyaowei@rhw-team.com"
+git config --global user.email "yeyaowei@gmail.com"
 
 git clone -b master "git@github.com:yeyaowei/yeyaowei.github.io.git" .deploy_git
 
