@@ -11,7 +11,13 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - "ff:98:09:1d:21:0d:a8:c3:30:cf:2e:91:c7:03:4e:b1"
+            - "97:08:a6:61:6f:19:c4:48:79:00:9e:32:b6:12:d2:c0"
       - checkout
+      - run:
+          name: Fetch Hexo Theme
+          command: |
+            git submodule init
+            git submodule update
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
@@ -24,9 +30,6 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      - run:
-          name: Fetch Hexo Theme
-          command: git clone --depth=1 git@github.com:yeyaowei/hexo-theme-next.git themes/next
       - run:
           name: Clean
           command: yarn clean
