@@ -1,0 +1,27 @@
+name: GitHub Pages Deploy
+on:
+  push:
+    branches: [ source ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+          token: ${{ secrets.PAGES_DEPLOY }}
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.1.2
+        with:
+          node-version: '15.x'
+      - name: Yarn install
+        run: yarn install
+      
+      - name: Build Hexo public files
+        run: |
+          yarn clean
+          yarn build
+      - name: Deploy pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bash deploy.sh
