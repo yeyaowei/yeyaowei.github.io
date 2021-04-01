@@ -10,18 +10,26 @@ jobs:
         with:
           submodules: true
           token: ${{ secrets.PAGES_DEPLOY }}
+
       - name: Setup Node.js environment
-        uses: actions/setup-node@v2.1.2
+        uses: actions/setup-node@v2.1.5
         with:
-          node-version: '15.x'
-      - name: Yarn install
+          node-version: '14.x'
+
+      - name: Install dependencies
         run: yarn install
-      
-      - name: Build Hexo public files
-        run: |
-          yarn clean
-          yarn build
-      - name: Deploy pages
+
+      - name: Set up environment
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: bash deploy.sh
+          CHINA_DEPLOY_KEY: ${{ secrets.CHINA_DEPLOY_KEY }}
+        run: |
+          sudo timedatectl set-timezone "Asia/Shanghai"
+          mkdir -p ~/.ssh
+          echo "$CHINA_DEPLOY_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          sed -i 's#PAGES_REPO_URL#https://${{ github.actor }}:${{ github.token }}@github.com/${{ github.repository }}#g' _config.yml
+
+      - name: Deploy
+        run: |
+          yarn deploy
