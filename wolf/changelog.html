@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title></title>
+		<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+		<style>
+			body {
+				background: rgb(22, 22, 22);
+				font-family: 'Open Sans', 'Helvetica Neue', 'Hiragino Sans GB', 'LiHei Pro', Arial, sans-serif;
+			}
+			
+			.container {
+				color: white;
+				display: flex;
+				flex-direction: column;
+			}
+			
+			.container h2 {
+				margin-left: 0.5em;
+			}
+			
+			.title {
+				margin-top: 1em;
+				cursor: pointer;
+				color: lightgray;
+				transition: background-color 0.2s;
+				background-color:rgba(255,255,255,0.05);
+			
+			
+			}
+			
+			.title .version{
+				display: inline-block;
+				margin: 1em;
+			}
+			.update-content {
+				display: none;
+				padding: 1em;
+				background-color:rgba(255,255,255,0.05);
+				font-size: 14px;
+			}
+			
+			.update-content p {
+				margin-top: 0;
+				margin-bottom: 0.5em;
+			}
+			
+			.title:hover {
+				background-color: rgba(255, 255, 255, 0.1);
+			}
+			
+			.flip {
+				transform: rotate(180deg);
+			}
+			
+			.title .toggle {
+				position: absolute;
+				margin-top: 1em;
+				transition: transform 0.3s;
+				right: 1.5em;
+			}
+			.red {
+				color: #dc3545;
+			}
+            .img, .video {
+                margin-top: 16px;
+                margin-bottom: 16px;
+            }
+            .video {
+                width: 478px;
+                height: 288px;
+            }
+            li {
+                line-height: 150%;
+            }
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="title" id="July-2">
+				<span class="version">July 2</span>
+				<span class="toggle">▼</span>
+				<div class="update-content">
+					<p>Hi, July!</p>
+					<p>本次更新紧急修复了一些问题（已在服务端得到修复），同时补充了几个小 Mod。</p>
+					<h2>更新与修复</h2>
+					<ul>
+						<li>修复开局赠送的「阿卡什宝典」内原本为「工程师手册」的物品变成了「工程师锤」的 Bug。<b>（服务器已修复）</b></li>
+						<li>修复由于缺少矿物配置文件导致主世界无法生成例如「赛特斯石英矿」等矿石的问题。<b>（服务器已修复）</b></li>
+					</ul>
+					<h2>新模组</h2>
+					<ul>
+						<li>添加 AE2 Stuff 0.7.0.4</li>
+						<li>添加 BD Lib 1.14.3.12</li>
+					</ul>
+					<h3>Hope you enjoy.</h3>
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			$(document).ready(function(){
+				$(".title").click(function () {
+					$(this).children(".update-content").slideToggle(300);
+					$(this).children(".toggle").toggleClass("flip");
+				});
+				var url = window.location.toString();
+				var version = url.split('#')[1];
+				$("#" + version).click();
+			});
+		</script>
+	</body>
+</html>

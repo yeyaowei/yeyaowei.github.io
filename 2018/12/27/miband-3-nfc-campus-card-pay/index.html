@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.yeyaowei.xyz","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="前言「MD，又忘记带饭卡了…」「？？？我的饭卡跑哪里去了？」健忘的你是不是经常有这些想法呢？看完这篇教程你将不会有这些烦恼啦！把校园卡牢牢的绑在你的手腕上吧！伸出你的手即可支付~装逼如风，常伴吾身。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用小米手环3 NFC 版模拟校园卡">
+<meta property="og:url" content="https://blog.yeyaowei.xyz/2018/12/27/miband-3-nfc-campus-card-pay/index.html">
+<meta property="og:site_name" content="小大灰狼的随心记录">
+<meta property="og:description" content="前言「MD，又忘记带饭卡了…」「？？？我的饭卡跑哪里去了？」健忘的你是不是经常有这些想法呢？看完这篇教程你将不会有这些烦恼啦！把校园卡牢牢的绑在你的手腕上吧！伸出你的手即可支付~装逼如风，常伴吾身。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.yeyaowei.xyz/2018/12/27/miband-3-nfc-campus-card-pay/xiaomi-sport-app.webp">
+<meta property="og:image" content="https://blog.yeyaowei.xyz/2018/12/27/miband-3-nfc-campus-card-pay/preparation.webp">
+<meta property="og:image" content="https://blog.yeyaowei.xyz/2018/12/27/miband-3-nfc-campus-card-pay/pn532-plug-in.webp">
+<meta property="og:image" content="https://blog.yeyaowei.xyz/2018/12/27/miband-3-nfc-campus-card-pay/device-manager.webp">
+<meta property="og:image" content="https://blog.yeyaowei.xyz/2018/12/27/miband-3-nfc-campus-card-pay/nfc-device-found.webp">
+<meta property="og:image" content="https://blog.yeyaowei.xyz/2018/12/27/miband-3-nfc-campus-card-pay/read-completed.webp">
+<meta property="og:image" content="https://blog.yeyaowei.xyz/2018/12/27/miband-3-nfc-campus-card-pay/mct-1.webp">
+<meta property="og:image" content="https://blog.yeyaowei.xyz/2018/12/27/miband-3-nfc-campus-card-pay/white-card.webp">
+<meta property="og:image" content="https://blog.yeyaowei.xyz/2018/12/27/miband-3-nfc-campus-card-pay/simulate-white-succeed.webp">
+<meta property="og:image" content="https://blog.yeyaowei.xyz/2018/12/27/miband-3-nfc-campus-card-pay/mct-2.webp">
+<meta property="og:image" content="https://blog.yeyaowei.xyz/2018/12/27/miband-3-nfc-campus-card-pay/mct-3.webp">
+<meta property="og:image" content="https://blog.yeyaowei.xyz/2018/12/27/miband-3-nfc-campus-card-pay/mct-4.webp">
+<meta property="og:image" content="https://blog.yeyaowei.xyz/2018/12/27/miband-3-nfc-campus-card-pay/mct-9.webp">
+<meta property="article:published_time" content="2018-12-27T13:01:06.000Z">
+<meta property="article:modified_time" content="2018-12-27T13:01:06.000Z">
+<meta property="article:author" content="Wolf_G">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.yeyaowei.xyz/2018/12/27/miband-3-nfc-campus-card-pay/xiaomi-sport-app.webp">
+
+<link rel="canonical" href="https://blog.yeyaowei.xyz/2018/12/27/miband-3-nfc-campus-card-pay/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>使用小米手环3 NFC 版模拟校园卡 | 小大灰狼的随心记录</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<script src="/assets/js/DPlayer.min.js"></script></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">小大灰狼的随心记录</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">一个还没建成的小破站</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.yeyaowei.xyz/2018/12/27/miband-3-nfc-campus-card-pay/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Wolf_G">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小大灰狼的随心记录">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          使用小米手环3 NFC 版模拟校园卡
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-12-27 21:01:06" itemprop="dateCreated datePublished" datetime="2018-12-27T21:01:06+08:00">2018-12-27</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>「MD，又忘记带饭卡了…」<br>「？？？我的饭卡跑哪里去了？」<br>健忘的你是不是经常有这些想法呢？<br>看完这篇教程你将不会有这些烦恼啦！<br>把校园卡牢牢的绑在你的手腕上吧！<br>伸出你的手即可支付~<br>装逼如风，常伴吾身。</p>
+<span id="more"></span>
+<h2 id="前言-2"><a href="#前言-2" class="headerlink" title="前言 * 2"></a>前言 * 2</h2><p>时隔多月的我终于来写博客了…<br>因为真的找不到什么事情来记录（可能是因为我懒…<br>以后一定加油写！这一篇就算是我的复健文吧！</p>
+<p>一个月前的我买了小米手环3 NFC 版本<br>主要目的就是为了模拟校园卡hhh<br>当然也有用来记录锻炼啦…XD<br>那么在这里就来写一下如何把我们的校园卡模拟在手环上面吧~</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">注意，本次教程只面向于「广东海洋大学寸金学院新湖校区」的校园卡。</span><br></pre></td></tr></table></figure>
+<h2 id="使用手环支付示范"><a href="#使用手环支付示范" class="headerlink" title="使用手环支付示范"></a>使用手环支付示范</h2><div id="dplayer0" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px; height:600px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"video":{"url":"/2018/12/27/miband-3-nfc-campus-card-pay/example.webm"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
+
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h4 id="成功之后就可以用手环刷卡了？可以刷门禁吗？可以在超市用吗？可以刷饮用水吗？"><a href="#成功之后就可以用手环刷卡了？可以刷门禁吗？可以在超市用吗？可以刷饮用水吗？" class="headerlink" title="成功之后就可以用手环刷卡了？可以刷门禁吗？可以在超市用吗？可以刷饮用水吗？"></a>成功之后就可以用手环刷卡了？可以刷门禁吗？可以在超市用吗？可以刷饮用水吗？</h4><p>是的，也可以刷门禁，也可以去超市用，那种黑色的机子都可以用。<br>在宿舍饮用水的机子同样可以使用，只需将手环正面靠近那个黑色面板就可以了。有时候机子可能会显示异常刷不了，这个时候先将手环远离再重新靠上去就 OK 了。</p>
+<h4 id="我弄进手环之后原来的卡还可以用吗？"><a href="#我弄进手环之后原来的卡还可以用吗？" class="headerlink" title="我弄进手环之后原来的卡还可以用吗？"></a>我弄进手环之后原来的卡还可以用吗？</h4><p>Emmm，应该是不可以了，就好比一天你的卡丢了，然后重新补办了一张，就算你之后再找到了原来那张卡也不可以用了。如果作死去尝试「滴」一下原来的卡的话还很有可能会冻结你的账户！</p>
+<h4 id="那我之后怎么往我卡里面充钱呢？"><a href="#那我之后怎么往我卡里面充钱呢？" class="headerlink" title="那我之后怎么往我卡里面充钱呢？"></a>那我之后怎么往我卡里面充钱呢？</h4><p>我寻思着，你直接跑去工作人员那里充应该不大可能了… 饭堂的那个自助机也用不了，因为太垃圾了无法读取手环的数据。<br>你可以先将校园卡绑定至「超融合校园」App，然后通过「一卡通充值」的功能进行充值。这样你下次用手环刷机子的时候同样会将金额圈存至你的账户中。</p>
+<h2 id="你的教程怎么那么长，那么麻烦啊…"><a href="#你的教程怎么那么长，那么麻烦啊…" class="headerlink" title="你的教程怎么那么长，那么麻烦啊…"></a>你的教程怎么那么长，那么麻烦啊…</h2><p>有人可能会问，「小米运动」App 里面不是就有个「门卡模拟」功能吗？<br>我直接把饭卡贴在上面然后用这个功能不就可以了？</p>
+<p>然而…并不可以<br>如果你仔细阅读过小米关于这项功能的说明的话，那么你就会知道，存在「加密区」的卡片是不可以模拟的。</p>
+<img src="/2018/12/27/miband-3-nfc-campus-card-pay/xiaomi-sport-app.webp" class="" title="小米运动APP说明">
+
+<h4 id="那什么是「加密区」呢？"><a href="#那什么是「加密区」呢？" class="headerlink" title="那什么是「加密区」呢？"></a>那什么是「加密区」呢？</h4><p>我们的校园卡(Mifare Classic 1k 类型)存在有 16 个扇区。<br>饭卡余额、所属人姓名、交易记录等信息会存放于其中的一个或多个扇区。<br>每个扇区都会有两个密钥，读取卡片的设备需要知道密钥才能访问扇区的数据。<br>未加密卡的密钥是大家都知道的默认值(FFFFFFFFFFFF)。<br>那么为了避免卡片被别人轻易的读取，厂商会将密钥写为其他值，这个时候读取设备不知道密钥也就不能读取。<br>那么密钥不是默认值的扇区就是「加密区」。</p>
+<h4 id="然而…-M1-类型的卡片密钥是可以破解的…"><a href="#然而…-M1-类型的卡片密钥是可以破解的…" class="headerlink" title="然而… M1 类型的卡片密钥是可以破解的…"></a>然而… M1 类型的卡片密钥是可以破解的…</h4><p>正巧，我们的学校饭卡也是 M1 类型的，所以就可以妥妥的把卡片模拟到我们的手环上面去啦~</p>
+<h4 id="在这里就要提一下我们的友校-岭南师范学院了"><a href="#在这里就要提一下我们的友校-岭南师范学院了" class="headerlink" title="在这里就要提一下我们的友校(?)岭南师范学院了"></a>在这里就要提一下我们的友校(?)岭南师范学院了</h4><p>他们的饭卡已经升级为了 CPU 模拟卡，而 CPU 卡是几乎不可能破解的…(CPU 模拟卡可以破解，但是需要更昂贵的设备，同时仅限模拟的区域，具体的可以百度)。<br>不愧是百年老校啊…</p>
+<h2 id="正式开始！"><a href="#正式开始！" class="headerlink" title="正式开始！"></a>正式开始！</h2><p>上面的一些概念阐述都是我为了让大家更轻易理解而极度简化的内容，可能会有错误，不过意思差不多。大家有兴趣的可以百度一下。<br>话不多说，开始我们的模拟之旅吧！(什么鬼)</p>
+<h2 id="准备材料"><a href="#准备材料" class="headerlink" title="准备材料"></a>准备材料</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://item.jd.com/6463286.html">搭载 Windows 操作系统的计算机</a> * 1</li>
+<li><a target="_blank" rel="noopener" href="https://www.oneplus.com/cn/mclaren">支持 NFC 功能的 Android 手机</a> * 1</li>
+<li><a target="_blank" rel="noopener" href="https://item.mi.com/product/8810.html">小米手环3 NFC 版本</a> * 1</li>
+<li><a target="_blank" rel="noopener" href="https://item.taobao.com/item.htm?id=570230463141">PN532 模块</a> * 1</li>
+<li><a target="_blank" rel="noopener" href="https://item.taobao.com/item.htm?id=570230463141">USB 转串口 模块</a> * 1</li>
+<li><a target="_blank" rel="noopener" href="https://item.taobao.com/item.htm?id=552725244962">CUID 卡 (一定是 CUID !!!)</a> * 1</li>
+<li>你的校园卡 * 1</li>
+<li><a target="_blank" rel="noopener" href="https://yeyaowei.github.io/files/CardTools.zip">教程所需要用到的软件及 App</a></li>
+</ul>
+<img src="/2018/12/27/miband-3-nfc-campus-card-pay/preparation.webp" class="" title="准备材料">
+
+<p>我这里的 PN532 和转串口模块和上面淘宝链接的不一样，这是我大一的时候分开买的hhh<br>排线怎么接可以去看看商品简介或者是问店家，我这个不同就不在这里说明了。<br>用 CUID 卡不用普通 UID 卡是因为 CUID 卡可以写入 0 扇区.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">0 扇区是用于存放卡片的 UID 和一些厂商信息、校验数据等。</span><br><span class="line">普通的 UID 卡的 0 扇区已经固化不可更改，CUID 卡可以。</span><br></pre></td></tr></table></figure>
+
+<h2 id="正式开始"><a href="#正式开始" class="headerlink" title="正式开始"></a>正式开始</h2><h2 id="将模块接入计算机"><a href="#将模块接入计算机" class="headerlink" title="将模块接入计算机"></a>将模块接入计算机</h2><img src="/2018/12/27/miband-3-nfc-campus-card-pay/pn532-plug-in.webp" class="" title="插入PN532">
+
+<p>PN532 红灯亮起来的话理论上没毛病了，然后看看设备管理器里面有没有对应的端口。</p>
+<img src="/2018/12/27/miband-3-nfc-campus-card-pay/device-manager.webp" class="" title="设备管理器">
+
+<p>不一定是我这个名字，看芯片的型号hhh</p>
+<h2 id="读取校园卡数据"><a href="#读取校园卡数据" class="headerlink" title="读取校园卡数据"></a>读取校园卡数据</h2><p>打开上位机程序，如果 PN532 插对了，这里也会显示「发现NFC设备」。</p>
+<img src="/2018/12/27/miband-3-nfc-campus-card-pay/nfc-device-found.webp" class="" title="上位机界面">
+
+<p>然后把校园卡放在 PN532 上面，注意周围不要有金属之类的干扰，否则会读不出来。<br>再点击程序上的「读整卡：读取卡片内容」<br>还记得最上面说的，我们的校园卡是存在「加密区」的，但是可以破解出来。<br>上位机程序读取过程中会将「非全加密卡」的「加密区」密钥破解出来并读取出全部扇区数据。<br>关于「非全加密卡」的概念有兴趣的可以百度，这里只要知道我们的饭卡就是这种卡。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">不过旧校区的不是哈哈哈哈哈，以后有时间补完。</span><br></pre></td></tr></table></figure>
+<p>由于需要破解，所以时间会比较长，读取完毕之后的界面是这个样子的…</p>
+<img src="/2018/12/27/miband-3-nfc-campus-card-pay/read-completed.webp" class="" title="读取完成">
+
+<p>遮住的地方就是每个扇区的密钥，然后你需要记下高亮区域的内容。<br>密钥也要记下来，就是表格第二列，写着 3 的那一行。<br>前 6 个格子和后 6 个格子的内容<br>重复的和 FFFFFFFFFFFF 不用记</p>
+<h2 id="保存密钥到手机"><a href="#保存密钥到手机" class="headerlink" title="保存密钥到手机"></a>保存密钥到手机</h2><p>在你的手机上安装并打开「Mifare经典工具」App，然后按下图操作。</p>
+<img src="/2018/12/27/miband-3-nfc-campus-card-pay/mct-1.webp" class="" title="MCT-1">
+
+<h2 id="读取并写入空白-CUID-卡数据"><a href="#读取并写入空白-CUID-卡数据" class="headerlink" title="读取并写入空白 CUID 卡数据"></a>读取并写入空白 CUID 卡数据</h2><p>接下来就是读取买来的空白 CUID 卡的数据了。<br>同样是读取校园卡的操作。<br>读取完之后，把上面校园卡图片高亮区域的内容填写到这次白卡的同样的位置。双击格子就可以编辑了。</p>
+<img src="/2018/12/27/miband-3-nfc-campus-card-pay/white-card.webp" class="" title="白卡操作">
+
+<p>具体操作看上图。<br>点击「否」之后就可以把数据写进去了。</p>
+<h2 id="用手环模拟白卡"><a href="#用手环模拟白卡" class="headerlink" title="用手环模拟白卡"></a>用手环模拟白卡</h2><p>先把改过 0 扇区的白卡模拟进手环，为什么要这一个步骤呢？<br>因为上面说过，手环不可模拟有「加密区」的卡，所以先把写好 UID(就是高亮区域的数据) 但是没有「加密区」的卡写进去。在最后再把数据写进手环。<br>模拟过程我就不说了… 自己打开「小米运动」App 操作吧…</p>
+<img src="/2018/12/27/miband-3-nfc-campus-card-pay/simulate-white-succeed.webp" class="" title="白卡模拟">
+
+<p>成功之后就是这个样子的啦，写个名字然后点「完成」就 OK 了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">手环检测卡片过程中可能会出现「不支持模拟该类型卡」的说明</span><br><span class="line">重新多模拟几次，把卡贴紧不要乱动就好了。</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用手机将校园卡数据写入已经模拟好白卡的手环"><a href="#使用手机将校园卡数据写入已经模拟好白卡的手环" class="headerlink" title="使用手机将校园卡数据写入已经模拟好白卡的手环"></a>使用手机将校园卡数据写入已经模拟好白卡的手环</h2><p>虽然不能直接模拟「加密区」，但是却可以把「加密区」的数据写进手环里…</p>
+<h3 id="首先用手机来读取校园卡数据"><a href="#首先用手机来读取校园卡数据" class="headerlink" title="首先用手机来读取校园卡数据"></a>首先用手机来读取校园卡数据</h3><p>打开手机的「Mifare经典工具」App，然后把校园卡贴近手机的 NFC 识别区域。<br>这时候 App 应该会提示已经检测到卡片。<br>然后点击「读标签」按钮。</p>
+<img src="/2018/12/27/miband-3-nfc-campus-card-pay/mct-2.webp" class="" title="MCT-2">
+
+<p>之后会要求选择密钥文件，我们选中之前保存的饭卡密钥以及一个「std.keys」<br>点击「启动映射并读取标签」。</p>
+<img src="/2018/12/27/miband-3-nfc-campus-card-pay/mct-3.webp" class="" title="MCT-3">
+
+<p>等待一段时间后数据就读取完成了，可以看到所有扇区的数据已经显示在了 App 界面上。<br>这时点击右上角一个软盘图案的按钮，再输入文件名保存这个转储文件。</p>
+<img src="/2018/12/27/miband-3-nfc-campus-card-pay/mct-4.webp" class="" title="MCT-4">
+
+<h3 id="将保存的数据写入手环"><a href="#将保存的数据写入手环" class="headerlink" title="将保存的数据写入手环"></a>将保存的数据写入手环</h3><p>接下来就将刚才保存的转储文件再写入手环当中。<br>首先返回到 App 的主界面，点击「写标签」<br>然后选择「写转储(克隆)」再选择转储<br>选中我们之前保存的校园卡转储文件。<br>然后会弹出一个选择扇区的框，这个时候将你的手环贴到手机的 NFC 识别区域。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">要等 App 检测出标签后才可操作！如果弹出不支持该标签的界面，就先把手环远离手机然后再贴上去。</span><br></pre></td></tr></table></figure>
+<p>检测没问题之后点击「好的」，然后又要求选择密钥文件，同样选择之前保存的饭卡密钥以及「std.keys」。<br>最后点击「启动映射并写转储数据」</p>
+<img src="/2018/12/27/miband-3-nfc-campus-card-pay/mct-9.webp" class="" title="最后一步">
+
+<h2 id="完成了！"><a href="#完成了！" class="headerlink" title="完成了！"></a>完成了！</h2><p>到这里，所有的教程就结束啦！是的这样就完成了！让我们总结一下步骤吧：</p>
+<ul>
+<li>先读取校园卡的数据，破解并保存密钥。</li>
+<li>将 UID 数据写入白卡的 0 扇区。</li>
+<li>将白卡模拟进手环当中。</li>
+<li>通过手机加上保存下来的密钥，将校园卡的数据写入手环。</li>
+</ul>
+<p>如果中途没有出现偏差的话你的手环已经成功模拟了你的校园卡。<br>你已经可以对你的那张饭卡说拜拜了~</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/08/20/leave-message-system/" rel="prev" title="辣鸡留言系统上线了23333">
+      <i class="fa fa-chevron-left"></i> 辣鸡留言系统上线了23333
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/01/15/improve-eclipse-auto-activation/" rel="next" title="让 Eclipse 在输入任何字母的时候都有补全提示">
+      让 Eclipse 在输入任何字母的时候都有补全提示 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80-2"><span class="nav-number">2.</span> <span class="nav-text">前言 * 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%89%8B%E7%8E%AF%E6%94%AF%E4%BB%98%E7%A4%BA%E8%8C%83"><span class="nav-number">3.</span> <span class="nav-text">使用手环支付示范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%90%E5%8A%9F%E4%B9%8B%E5%90%8E%E5%B0%B1%E5%8F%AF%E4%BB%A5%E7%94%A8%E6%89%8B%E7%8E%AF%E5%88%B7%E5%8D%A1%E4%BA%86%EF%BC%9F%E5%8F%AF%E4%BB%A5%E5%88%B7%E9%97%A8%E7%A6%81%E5%90%97%EF%BC%9F%E5%8F%AF%E4%BB%A5%E5%9C%A8%E8%B6%85%E5%B8%82%E7%94%A8%E5%90%97%EF%BC%9F%E5%8F%AF%E4%BB%A5%E5%88%B7%E9%A5%AE%E7%94%A8%E6%B0%B4%E5%90%97%EF%BC%9F"><span class="nav-number">4.0.1.</span> <span class="nav-text">成功之后就可以用手环刷卡了？可以刷门禁吗？可以在超市用吗？可以刷饮用水吗？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%91%E5%BC%84%E8%BF%9B%E6%89%8B%E7%8E%AF%E4%B9%8B%E5%90%8E%E5%8E%9F%E6%9D%A5%E7%9A%84%E5%8D%A1%E8%BF%98%E5%8F%AF%E4%BB%A5%E7%94%A8%E5%90%97%EF%BC%9F"><span class="nav-number">4.0.2.</span> <span class="nav-text">我弄进手环之后原来的卡还可以用吗？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%82%A3%E6%88%91%E4%B9%8B%E5%90%8E%E6%80%8E%E4%B9%88%E5%BE%80%E6%88%91%E5%8D%A1%E9%87%8C%E9%9D%A2%E5%85%85%E9%92%B1%E5%91%A2%EF%BC%9F"><span class="nav-number">4.0.3.</span> <span class="nav-text">那我之后怎么往我卡里面充钱呢？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%A0%E7%9A%84%E6%95%99%E7%A8%8B%E6%80%8E%E4%B9%88%E9%82%A3%E4%B9%88%E9%95%BF%EF%BC%8C%E9%82%A3%E4%B9%88%E9%BA%BB%E7%83%A6%E5%95%8A%E2%80%A6"><span class="nav-number">5.</span> <span class="nav-text">你的教程怎么那么长，那么麻烦啊…</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%82%A3%E4%BB%80%E4%B9%88%E6%98%AF%E3%80%8C%E5%8A%A0%E5%AF%86%E5%8C%BA%E3%80%8D%E5%91%A2%EF%BC%9F"><span class="nav-number">5.0.1.</span> <span class="nav-text">那什么是「加密区」呢？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%84%B6%E8%80%8C%E2%80%A6-M1-%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8D%A1%E7%89%87%E5%AF%86%E9%92%A5%E6%98%AF%E5%8F%AF%E4%BB%A5%E7%A0%B4%E8%A7%A3%E7%9A%84%E2%80%A6"><span class="nav-number">5.0.2.</span> <span class="nav-text">然而… M1 类型的卡片密钥是可以破解的…</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8%E8%BF%99%E9%87%8C%E5%B0%B1%E8%A6%81%E6%8F%90%E4%B8%80%E4%B8%8B%E6%88%91%E4%BB%AC%E7%9A%84%E5%8F%8B%E6%A0%A1-%E5%B2%AD%E5%8D%97%E5%B8%88%E8%8C%83%E5%AD%A6%E9%99%A2%E4%BA%86"><span class="nav-number">5.0.3.</span> <span class="nav-text">在这里就要提一下我们的友校(?)岭南师范学院了</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%BC%8F%E5%BC%80%E5%A7%8B%EF%BC%81"><span class="nav-number">6.</span> <span class="nav-text">正式开始！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E6%9D%90%E6%96%99"><span class="nav-number">7.</span> <span class="nav-text">准备材料</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%BC%8F%E5%BC%80%E5%A7%8B"><span class="nav-number">8.</span> <span class="nav-text">正式开始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86%E6%A8%A1%E5%9D%97%E6%8E%A5%E5%85%A5%E8%AE%A1%E7%AE%97%E6%9C%BA"><span class="nav-number">9.</span> <span class="nav-text">将模块接入计算机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%BB%E5%8F%96%E6%A0%A1%E5%9B%AD%E5%8D%A1%E6%95%B0%E6%8D%AE"><span class="nav-number">10.</span> <span class="nav-text">读取校园卡数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%9D%E5%AD%98%E5%AF%86%E9%92%A5%E5%88%B0%E6%89%8B%E6%9C%BA"><span class="nav-number">11.</span> <span class="nav-text">保存密钥到手机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%BB%E5%8F%96%E5%B9%B6%E5%86%99%E5%85%A5%E7%A9%BA%E7%99%BD-CUID-%E5%8D%A1%E6%95%B0%E6%8D%AE"><span class="nav-number">12.</span> <span class="nav-text">读取并写入空白 CUID 卡数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E6%89%8B%E7%8E%AF%E6%A8%A1%E6%8B%9F%E7%99%BD%E5%8D%A1"><span class="nav-number">13.</span> <span class="nav-text">用手环模拟白卡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%89%8B%E6%9C%BA%E5%B0%86%E6%A0%A1%E5%9B%AD%E5%8D%A1%E6%95%B0%E6%8D%AE%E5%86%99%E5%85%A5%E5%B7%B2%E7%BB%8F%E6%A8%A1%E6%8B%9F%E5%A5%BD%E7%99%BD%E5%8D%A1%E7%9A%84%E6%89%8B%E7%8E%AF"><span class="nav-number">14.</span> <span class="nav-text">使用手机将校园卡数据写入已经模拟好白卡的手环</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A6%96%E5%85%88%E7%94%A8%E6%89%8B%E6%9C%BA%E6%9D%A5%E8%AF%BB%E5%8F%96%E6%A0%A1%E5%9B%AD%E5%8D%A1%E6%95%B0%E6%8D%AE"><span class="nav-number">14.1.</span> <span class="nav-text">首先用手机来读取校园卡数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86%E4%BF%9D%E5%AD%98%E7%9A%84%E6%95%B0%E6%8D%AE%E5%86%99%E5%85%A5%E6%89%8B%E7%8E%AF"><span class="nav-number">14.2.</span> <span class="nav-text">将保存的数据写入手环</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E6%88%90%E4%BA%86%EF%BC%81"><span class="nav-number">15.</span> <span class="nav-text">完成了！</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Wolf_G</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div id="beian-footer" class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备2021037287号 </a>
+      <img src="/images/beian.png" style="display: inline-block;"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44162302000030" rel="noopener" target="_blank">粤公网安备 44162302000030号 </a>
+  </div>
+    <script>
+      if (location.host !== 'wolfg.xyz') {
+        document.getElementById('beian-footer').setAttribute('style', 'display: none')
+      }
+    </script>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wolf_G</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
